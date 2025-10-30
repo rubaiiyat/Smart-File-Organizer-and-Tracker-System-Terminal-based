@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "scanner.h"
+#include "organizer.h"
 
 void main_menu();
 void scan_menu();
@@ -31,8 +32,14 @@ void main_menu() {
                 scan_menu();
                 break;
             case 2:
-                printf("Organize feature coming soon...\n");
-                break;
+                {
+                    char path[512];
+                    printf("Enter directory path to organize: ");
+                    scanf("%s", path);
+                    organize_files(path);
+                    break;
+                }
+                
             case 3:
                 printf("Tracker feature coming soon...\n");
                 break;
