@@ -4,6 +4,8 @@
 #include "scanner.h"
 #include "organizer.h"
 #include "tracker.h"
+#include "search.h"
+#include "report.h"
 
 void main_menu();
 void scan_menu();
@@ -50,11 +52,24 @@ void main_menu() {
                     break;
                 }
             case 4:
-                printf("Search feature coming soon...\n");
-                break;
+                {
+                    char path[512], keyword[128];
+                    printf("Enter directory path to search: ");
+                    scanf("%s", path);
+                    printf("Enter file name keyword to search: ");
+                    scanf("%s", keyword);
+                    printf("\nSearching for \"%s\" in %s ...\n", keyword, path);
+                    search_files(path, keyword);
+                    break;
+                }
             case 5:
-                printf("Report Generator coming soon...\n");
-                break;
+                {
+                    char path[512];
+                    printf("Enter directory path to generate report: ");
+                    scanf("%s", path);
+                    generate_report(path);
+                    break;
+                }
             case 6:
                 printf("Exiting program...\n");
                 exit(0);

@@ -1,0 +1,5 @@
+==== Directory Report for: D: ====
+Total Folders : 95
+Total Files   : 211
+Total Size    : 1718.68 MB
+Report Time   : 2025-11-06 20:17:21
