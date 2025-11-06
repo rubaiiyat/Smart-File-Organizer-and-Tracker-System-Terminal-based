@@ -4,7 +4,7 @@
 #include <time.h>
 #include "scanner.h"
 
-// Recursive function to calculate folder size
+
 long long get_folder_size(const char *path) {
     WIN32_FIND_DATA findFileData;
     HANDLE hFind;
