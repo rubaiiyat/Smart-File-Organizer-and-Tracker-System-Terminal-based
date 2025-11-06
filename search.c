@@ -11,14 +11,14 @@ void search_files_recursive(const char *path, const char *filename, int *foundCo
     snprintf(searchPath, sizeof(searchPath), "%s\\*", path);
     hFind = FindFirstFile(searchPath, &findFileData);
 
-    // If folder can't be accessed, just skip silently
+    
     if (hFind == INVALID_HANDLE_VALUE)
         return;
 
     do {
         const char *name = findFileData.cFileName;
 
-        // Skip hidden/system folders
+        
         if (findFileData.dwFileAttributes & (FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM))
             continue;
 
@@ -29,7 +29,7 @@ void search_files_recursive(const char *path, const char *filename, int *foundCo
         snprintf(fullPath, sizeof(fullPath), "%s\\%s", path, name);
 
         if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
-            // Recursive search
+            
             search_files_recursive(fullPath, filename, foundCount);
         } else {
             if (strstr(name, filename) != NULL) {
