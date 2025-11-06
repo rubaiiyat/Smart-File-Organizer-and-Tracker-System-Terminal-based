@@ -3,6 +3,7 @@
 #include <string.h>
 #include "scanner.h"
 #include "organizer.h"
+#include "tracker.h"
 
 void main_menu();
 void scan_menu();
@@ -41,8 +42,13 @@ void main_menu() {
                 }
                 
             case 3:
-                printf("Tracker feature coming soon...\n");
-                break;
+                {
+                    char path[512];
+                    printf("Enter directory path to track changes: ");
+                    scanf("%s", path);
+                    track_changes(path);
+                    break;
+                }
             case 4:
                 printf("Search feature coming soon...\n");
                 break;
